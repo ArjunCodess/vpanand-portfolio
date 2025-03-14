@@ -39,7 +39,7 @@ export default function AboutSection() {
           
           <button 
             onClick={() => setExpanded(!expanded)}
-            className="mt-4 text-blue-600 font-medium hover:text-blue-800 focus:outline-none flex items-center"
+            className="mt-4 text-blue-600 font-medium hover:text-blue-800 focus:outline-none flex items-center cursor-pointer"
           >
             {expanded ? 'Read Less' : 'Read More'}
             <svg 
