@@ -1,39 +1,25 @@
 'use client'
 
 import { useState } from "react"
+import { ABOUT_DATA } from "@/lib/data"
 
 export default function AboutSection() {
   const [expanded, setExpanded] = useState(false)
-  
-  const shortDescription = "Dr Vijay Prakash Anand is a seasoned academician and practitioner in the area of Marketing and Digital Marketing. He has been ranked as India's leading 'Marketing by Vijay' fame YouTuber-Professor with 5.0 Million views and 93,000 plus subscribers. More than 17,500 students from all across the world have enrolled for his Online MOOC course 'Fundamentals of Marketing' and 'Marketing Management Masterclass' on the world's leading MOOC platform Udemy."
   
   return (
     <div id="about">
       <h1 className="font-instrument text-3xl md:text-4xl mb-8">About</h1>
       <div className="bg-white rounded-3xl p-6 border border-neutral-100 shadow-sm">
         <div className="text-neutral-700 leading-relaxed">
-          <p>{shortDescription}</p>
+          <p>{ABOUT_DATA.shortDescription}</p>
           
           {expanded && (
             <>
-              <p className="mt-4">
-                He has written two books and edited one news magazine and three newsletters. His book &apos;Marketing Management, An Indian Perspective&apos; is recommended as a textbook for Marketing in Executive PG Program in Management at IIM Ranchi and several B-Schools and Universities. He has also directed 10 Short Films for IIM Ranchi for its Certificate Program &apos;Barefoot Managers&apos; in 2013.
-              </p>
-              <p className="mt-4">
-                He has also developed Online Courses for iJaipuria. He has supervised content development for more than 10 Courses of more than 30 hours duration. These courses include Video Content and support material like Handouts, Quizzes etc.
-              </p>
-              <p className="mt-4">
-                He is an expert in the area of Use of ICT in Education, MOOCs and Flipped Classes and has been trained by IIT Bombay, IIM Bangalore and IIT Kanpur.
-              </p>
-              <p className="mt-4">
-                He has also conducted MDPs, Training and Consultancy in the area of Marketing, Sales, Digital Marketing and Social Media Marketing for esteemed organisations like Airtel, India Post, Indian Oil, PHDCCI, NHM, BPCL, Hyundai, CBEC, SBI, SSB and many nationalized banks.
-              </p>
-              <p className="mt-4">
-                Dr Vijay is a management postgraduate in Marketing from Symbiosis, Pune and an Economics Honours graduate from St. Xavier&apos;s, Ranchi. With a PhD in the area of Green marketing, he has more than 23 years of experience in the field of Digital Marketing, Marketing, Advertising, Academics and Research. He is currently working as a Faculty - Marketing at Jaipuria Institute of Management and also looks after the Online Course Development for iJaipuria.
-              </p>
-              <p className="mt-4">
-                He is also a Visiting Faculty to IIM Ranchi. He has taught at leading B-Schools in India like IIM Ranchi, Symbiosis, Pune, Bharti Vidyapeeth, Pune, Pune University MBA Department as a visiting faculty member and in EMPI Business School, New Delhi, NIILM Centre for Management Studies, New Delhi and IES Management College, Mumbai University, Mumbai as a full-time faculty member.
-              </p>
+              {ABOUT_DATA.longDescription.map((paragraph, index) => (
+                <p key={index} className="mt-4">
+                  {paragraph}
+                </p>
+              ))}
             </>
           )}
           

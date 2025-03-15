@@ -11,6 +11,7 @@ import CoursesSection from "./courses-section";
 import Separator from "./ui/separator";
 import Navigation from "./navigation";
 import { ScrollProgress } from "./ui/scroll-progress";
+import { HERO_IMAGE } from "@/lib/data";
 
 export default function MainLayout() {
   return (
@@ -45,10 +46,10 @@ export default function MainLayout() {
         {/* Hero Image - Only visible on desktop/laptop */}
         <div className="w-full mb-12 rounded-2xl overflow-hidden border border-neutral-300">
           <Image
-            src="/hero.jpeg"
-            alt="Dr. Vijay Prakash Anand - Hero Image"
-            width={1584}
-            height={396}
+            src={HERO_IMAGE.src}
+            alt={HERO_IMAGE.alt}
+            width={HERO_IMAGE.width}
+            height={HERO_IMAGE.height}
             className="w-full h-auto object-cover"
             priority
           />

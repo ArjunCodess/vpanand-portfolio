@@ -8,29 +8,15 @@ import {
   SheetContent, 
   SheetTrigger 
 } from "./ui/sheet";
-
-interface NavItem {
-  name: string;
-  id: string;
-}
+import { NAV_ITEMS } from "@/lib/data";
 
 export default function Navigation() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   
-  const navItems: NavItem[] = [
-    { name: "About", id: "about" },
-    { name: "Featured Videos", id: "featured-videos" },
-    { name: "Experience", id: "experience" },
-    { name: "Education", id: "education" },
-    { name: "Skills", id: "skills" },
-    { name: "Publications", id: "publications" },
-    { name: "Courses", id: "courses" },
-  ];
-
   // Mobile navigation items (to be rendered inside Sheet)
   const NavItems = () => (
     <ul className="flex flex-col">
-      {navItems.map((item) => (
+      {NAV_ITEMS.map((item) => (
         <li key={item.name} className="w-full">
           <Link 
             href={`#${item.id}`}

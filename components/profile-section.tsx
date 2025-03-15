@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react"
 import { motion } from "motion/react"
 import ScrambleIn, { ScrambleInHandle } from "./ui/text/scramble-in"
 import Float from "./ui/float"
+import { PROFILE_DATA } from "@/lib/data"
 
 export default function ProfileSection() {
   const nameRef = useRef<ScrambleInHandle>(null)
@@ -17,6 +18,9 @@ export default function ProfileSection() {
     
     return () => clearTimeout(timer)
   }, [])
+
+  // Split the full title into lines
+  const titleLines = PROFILE_DATA.fullTitle.split('\n');
 
   return (
     <div className="space-y-6 flex flex-col items-center sm:items-start">
@@ -34,8 +38,8 @@ export default function ProfileSection() {
           >
             <div className="border border-neutral-300 w-32 h-32 sm:w-40 sm:h-40 rounded-3xl overflow-hidden shadow-lg hover:scale-105 duration-200 transition-transform">
               <Image
-                src="/image.png"
-                alt="Dr. Vijay Prakash Anand"
+                src={PROFILE_DATA.image}
+                alt={PROFILE_DATA.name}
                 width={160}
                 height={160}
                 className="object-cover"
@@ -53,7 +57,7 @@ export default function ProfileSection() {
         <h1 className="font-instrument text-3xl sm:text-4xl font-medium">
           <ScrambleIn
             ref={nameRef}
-            text="Dr. Vijay Prakash Anand"
+            text={PROFILE_DATA.name}
             scrambleSpeed={30}
             scrambledLetterCount={4}
             autoStart={false}
@@ -62,9 +66,9 @@ export default function ProfileSection() {
           />
         </h1>
         <p className="text-neutral-700 text-base sm:text-lg">
-          Marketing Professor & Digital
+          {titleLines[0]}
           <br className="hidden sm:block" />{" "}
-          Marketing Expert with 5M+ YouTube Views
+          {titleLines[1]}
         </p>
       </motion.div>
     </div>

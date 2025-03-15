@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { FOOTER_LINKS, PROFILE_DATA, COPYRIGHT_TEXT } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -9,48 +10,15 @@ export default function Footer() {
         {/* Navigation links - only visible on mobile */}
         <div className="w-full flex justify-center py-3 mb-8 sm:hidden">
           <div className="grid grid-cols-2 gap-x-8 gap-y-4">
-            <Link
-              href="#about"
-              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
-            >
-              About
-            </Link>
-            <Link
-              href="#featured-videos"
-              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
-            >
-              Featured Videos
-            </Link>
-            <Link
-              href="#experience"
-              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
-            >
-              Experience
-            </Link>
-            <Link
-              href="#education"
-              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
-            >
-              Education
-            </Link>
-            <Link
-              href="#skills"
-              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
-            >
-              Skills
-            </Link>
-            <Link
-              href="#publications"
-              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
-            >
-              Publications
-            </Link>
-            <Link
-              href="#courses"
-              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
-            >
-              Courses
-            </Link>
+            {FOOTER_LINKS.map((item) => (
+              <Link
+                key={item.name}
+                href={`#${item.id}`}
+                className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
         </div>
         
@@ -58,24 +26,24 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center md:items-start gap-4">
             <div className="w-12 h-12 rounded-full overflow-hidden">
               <Image
-                src="/image.png"
-                alt="Dr. Vijay Prakash Anand"
+                src={PROFILE_DATA.image}
+                alt={PROFILE_DATA.name}
                 width={48}
                 height={48}
                 className="object-cover"
               />
             </div>
             <div className="text-center sm:text-left mt-2 sm:mt-0">
-              <p className="font-medium">Dr. Vijay Prakash Anand</p>
+              <p className="font-medium">{PROFILE_DATA.name}</p>
               <p className="text-sm text-neutral-400">
-                Marketing Professor & Digital Marketing Expert
+                {PROFILE_DATA.title}
               </p>
             </div>
           </div>
           
           <div>
             <Link 
-              href="mailto:vpanand73@gmail.com"
+              href={`mailto:${PROFILE_DATA.email}`}
               className="group bg-white text-black px-4 py-2 rounded-full text-sm flex items-center justify-center gap-2 hover:bg-neutral-100 hover:scale-105 transition-all hover:shadow-md duration-300"
             >
               Contact me <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
@@ -85,8 +53,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-10 border-t border-neutral-800 text-center text-neutral-500 text-sm">
           <p>
-            © {new Date().getFullYear()} Dr. Vijay Prakash Anand. All rights
-            reserved.
+            {COPYRIGHT_TEXT}
           </p>
         </div>
       </div>
