@@ -58,6 +58,9 @@ export default async function Footer() {
         </div>
 
         <div className="mt-8 pt-10 border-t border-neutral-800 text-center text-neutral-500 text-sm">
+          <div className="mb-3 text-neutral-200">
+            built by his son <Link href="https://arjuncodess.is-a.dev/" className="text-white font-medium underline decoration-dotted underline-offset-[6px] hover:text-neutral-400 transition-colors" target="_blank" rel="noopener noreferrer">@arjuncodess</Link>
+          </div>
           <p>
             {copyright}
           </p>
