@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function FeaturedVideos() {
   return (
     <div id="videos">
-      <h3 className="text-2xl font-serif mb-8">Featured Videos</h3>
+      <h1 className="text-2xl font-serif mb-8">Featured Videos</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Video 1 - Marketing in Hindi */}
@@ -13,9 +13,9 @@ export default function FeaturedVideos() {
           href="https://youtu.be/uOe-ykEtpk0"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1 cursor-pointer group"
+          className="bg-white rounded-3xl border border-neutral-100 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1 cursor-pointer group"
         >
-          <div className="relative h-48 w-full bg-gray-100 overflow-hidden">
+          <div className="relative h-48 w-full bg-neutral-100 overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center z-10">
               <div className="w-14 h-14 rounded-full bg-black bg-opacity-70 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                 <Play className="w-6 h-6 text-white" />
@@ -42,7 +42,7 @@ export default function FeaturedVideos() {
             <h4 className="font-medium text-lg group-hover:text-black/80">
               Marketing in Hindi
             </h4>
-            <p className="text-gray-600 text-sm mt-2 line-clamp-2">
+            <p className="text-neutral-600 text-sm mt-2 line-clamp-2">
               The first question that comes to mind in marketing is – What is
               marketing? You will find the answer to this in our first Hindi
               video.
@@ -55,9 +55,9 @@ export default function FeaturedVideos() {
           href="https://youtu.be/t8_PBTl02Hg"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1 cursor-pointer group"
+          className="bg-white rounded-3xl border border-neutral-100 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1 cursor-pointer group"
         >
-          <div className="relative h-48 w-full bg-gray-100 overflow-hidden">
+          <div className="relative h-48 w-full bg-neutral-100 overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center z-10">
               <div className="w-14 h-14 rounded-full bg-black bg-opacity-70 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                 <Play className="w-6 h-6 text-white" />
@@ -84,7 +84,7 @@ export default function FeaturedVideos() {
             <h4 className="font-medium text-lg group-hover:text-black/80">
               4Ps of Marketing
             </h4>
-            <p className="text-gray-600 text-sm mt-2 line-clamp-2">
+            <p className="text-neutral-600 text-sm mt-2 line-clamp-2">
               In this video, I have talked about one of the most important
               concepts in Marketing - Marketing Mix. It is also widely known as
               4P&apos;s of Marketing.
