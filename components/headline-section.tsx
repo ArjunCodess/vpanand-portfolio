@@ -3,7 +3,7 @@
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import ScrambleIn, { ScrambleInHandle } from "./ui/text/scramble-in"
 import Float from "./ui/float"
 

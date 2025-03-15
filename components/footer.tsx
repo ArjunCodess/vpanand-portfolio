@@ -57,7 +57,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center md:items-start gap-4">
             <div className="w-12 h-12 rounded-full overflow-hidden">
               <Image
-                src="/sdff.png"
+                src="/image.png"
                 alt="Dr. Vijay Prakash Anand"
                 width={48}
                 height={48}

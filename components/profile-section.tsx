@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { useEffect, useRef } from "react"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import ScrambleIn, { ScrambleInHandle } from "./ui/text/scramble-in"
 import Float from "./ui/float"
 
@@ -32,7 +32,7 @@ export default function ProfileSection() {
         >
           <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl overflow-hidden shadow-lg hover:scale-105 duration-200 transition-transform">
             <Image
-              src="/sdff.png"
+              src="/image.png"
               alt="Dr. Vijay Prakash Anand"
               width={160}
               height={160}
