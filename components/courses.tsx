@@ -1,13 +1,25 @@
 import { Award } from "lucide-react"
-import { COURSES_DATA } from "@/lib/data"
+import { getCourses } from "@/lib/sanity"
 
-export default function CoursesSection() {
+// Define type for course data that matches Sanity schema
+export type CourseData = {
+  title: string;
+  institution: string;
+  location: string;
+  icon: string;
+  color: string;
+}
+
+// Server component that fetches data
+export default async function CoursesSection() {
+  const coursesData = await getCourses();
+  
   return (
     <div id="courses">
       <h1 className="font-instrument text-3xl md:text-4xl mb-8">Courses</h1>
 
       <div className="space-y-6">
-        {COURSES_DATA.map((course, index) => (
+        {coursesData.map((course: CourseData, index: number) => (
           <div 
             key={index}
             className="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-white rounded-xl sm:rounded-full p-4 border border-neutral-100 shadow-sm"

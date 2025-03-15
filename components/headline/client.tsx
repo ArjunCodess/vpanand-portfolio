@@ -4,11 +4,12 @@ import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
 import { motion } from "motion/react"
-import ScrambleIn, { ScrambleInHandle } from "./ui/text/scramble-in"
-import Float from "./ui/float"
-import { HEADLINE_DATA } from "@/lib/data"
+import ScrambleIn, { ScrambleInHandle } from "../ui/text/scramble-in"
+import Float from "../ui/float"
+import { HeadlineData } from "."
 
-export default function HeadlineSection() {
+// Client component that handles animations and user interactions
+export default function HeadlineClient({ headline }: { headline: HeadlineData }) {
   const titleRef = useRef<ScrambleInHandle>(null)
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export default function HeadlineSection() {
           <h2 className="text-3xl md:text-4xl font-instrument">
             <ScrambleIn
               ref={titleRef}
-              text={HEADLINE_DATA.title}
+              text={headline.title}
               scrambleSpeed={40}
               scrambledLetterCount={5}
               autoStart={false}
@@ -52,18 +53,18 @@ export default function HeadlineSection() {
         transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
       >
         <Link 
-          href={HEADLINE_DATA.contactLink}
+          href={headline.contactLink}
           className="group w-full md:w-auto bg-black text-white px-6 py-3 rounded-full text-sm flex items-center justify-center gap-2 hover:bg-neutral-800 hover:shadow-lg transition-all duration-300 hover:scale-105"
         >
-          {HEADLINE_DATA.contactText} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+          {headline.contactText} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
         </Link>
         <Link 
-          href={HEADLINE_DATA.workLink} 
+          href={headline.workLink} 
           className="w-full md:w-auto text-sm border border-neutral-200 px-5 py-3 rounded-full text-center hover:border-neutral-400 hover:bg-neutral-50 hover:shadow-md transition-all duration-300 hover:scale-105"
         >
-          {HEADLINE_DATA.workText}
+          {headline.workText}
         </Link>
       </motion.div>
     </div>
   )
-}
+} 

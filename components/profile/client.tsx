@@ -3,11 +3,12 @@
 import Image from "next/image"
 import { useEffect, useRef } from "react"
 import { motion } from "motion/react"
-import ScrambleIn, { ScrambleInHandle } from "./ui/text/scramble-in"
-import Float from "./ui/float"
-import { PROFILE_DATA } from "@/lib/data"
+import ScrambleIn, { ScrambleInHandle } from "../ui/text/scramble-in"
+import Float from "../ui/float"
+import { ProfileData } from "."
 
-export default function ProfileSection() {
+// Client component that handles animations and user interactions
+export default function ProfileClient({ profile }: { profile: ProfileData }) {
   const nameRef = useRef<ScrambleInHandle>(null)
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export default function ProfileSection() {
   }, [])
 
   // Split the full title into lines
-  const titleLines = PROFILE_DATA.fullTitle.split('\n');
+  const titleLines = profile.fullTitle.split('\n');
 
   return (
     <div className="space-y-6 flex flex-col items-center sm:items-start">
@@ -38,8 +39,8 @@ export default function ProfileSection() {
           >
             <div className="border border-neutral-300 w-32 h-32 sm:w-40 sm:h-40 rounded-3xl overflow-hidden shadow-lg hover:scale-105 duration-200 transition-transform">
               <Image
-                src={PROFILE_DATA.image}
-                alt={PROFILE_DATA.name}
+                src={profile.image}
+                alt={profile.name}
                 width={160}
                 height={160}
                 className="object-cover"
@@ -57,7 +58,7 @@ export default function ProfileSection() {
         <h1 className="font-instrument text-3xl sm:text-4xl font-medium">
           <ScrambleIn
             ref={nameRef}
-            text={PROFILE_DATA.name}
+            text={profile.name}
             scrambleSpeed={30}
             scrambledLetterCount={4}
             autoStart={false}
@@ -73,4 +74,4 @@ export default function ProfileSection() {
       </motion.div>
     </div>
   )
-}
+} 

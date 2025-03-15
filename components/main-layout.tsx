@@ -1,19 +1,22 @@
 import Image from "next/image";
-import ProfileSection from "./profile-section";
-import HeadlineSection from "./headline-section";
-import AboutSection from "./about-section";
+import ProfileSection from "./profile";
+import HeadlineSection from "./headline";
+import AboutSection from "./about";
 import FeaturedVideos from "./featured-videos";
-import ExperienceSection from "./experience-section";
-import EducationSection from "./education-section";
-import SkillsSection from "./skills-section";
-import PublicationsSection from "./publications-section";
-import CoursesSection from "./courses-section";
+import ExperienceSection from "./experience";
+import EducationSection from "./education";
+import SkillsSection from "./skills";
+import PublicationsSection from "./publications";
+import CoursesSection from "./courses";
 import Separator from "./ui/separator";
 import Navigation from "./navigation";
 import { ScrollProgress } from "./ui/scroll-progress";
-import { HERO_IMAGE } from "@/lib/data";
+import { getHeroImage } from "@/lib/sanity";
 
-export default function MainLayout() {
+// Server component that fetches data and renders the layout
+export default async function MainLayout() {
+  const heroImage = await getHeroImage();
+
   return (
     <div className="relative">
       {/* Mobile and Tablet Layout - Stack everything vertically */}
@@ -46,10 +49,10 @@ export default function MainLayout() {
         {/* Hero Image - Only visible on desktop/laptop */}
         <div className="w-full mb-12 rounded-2xl overflow-hidden border border-neutral-300">
           <Image
-            src={HERO_IMAGE.src}
-            alt={HERO_IMAGE.alt}
-            width={HERO_IMAGE.width}
-            height={HERO_IMAGE.height}
+            src={heroImage.src}
+            alt={heroImage.alt}
+            width={heroImage.width}
+            height={heroImage.height}
             className="w-full h-auto object-cover"
             priority
           />

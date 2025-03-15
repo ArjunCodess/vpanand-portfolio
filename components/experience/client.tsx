@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from 'react';
-import { EXPERIENCE_DATA } from '@/lib/data';
+import { ExperienceData } from '.';
 
-export default function ExperienceSection() {
+// Client component that handles interactions
+export default function ExperienceClient({ experiences }: { experiences: ExperienceData[] }) {
   const [showAll, setShowAll] = useState(false);
   
   // Display only first 5 experiences if not showing all
-  const visibleExperiences = showAll ? EXPERIENCE_DATA : EXPERIENCE_DATA.slice(0, 5);
+  const visibleExperiences = showAll ? experiences : experiences.slice(0, 5);
 
   return (
     <div id="experience">
@@ -35,14 +36,16 @@ export default function ExperienceSection() {
         ))}
       </div>
 
-      <div className="mt-6 text-center">
-        <button 
-          onClick={() => setShowAll(!showAll)} 
-          className="cursor-pointer px-6 pt-2 pb-2.5 bg-neutral-100 hover:bg-neutral-200 rounded-full text-neutral-700 font-medium transition-colors"
-        >
-          {showAll ? 'Show Less' : 'Read More'}
-        </button>
-      </div>
+      {experiences.length > 5 && (
+        <div className="mt-6 text-center">
+          <button 
+            onClick={() => setShowAll(!showAll)} 
+            className="cursor-pointer px-6 pt-2 pb-2.5 bg-neutral-100 hover:bg-neutral-200 rounded-full text-neutral-700 font-medium transition-colors"
+          >
+            {showAll ? 'Show Less' : 'Read More'}
+          </button>
+        </div>
+      )}
     </div>
   )
 } 

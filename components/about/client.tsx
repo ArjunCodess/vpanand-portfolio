@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from "react"
-import { ABOUT_DATA } from "@/lib/data"
+import { AboutData } from "."
 
-export default function AboutSection() {
+// Client component that handles interactions
+export default function AboutClient({ about }: { about: AboutData }) {
   const [expanded, setExpanded] = useState(false)
   
   return (
@@ -11,11 +12,11 @@ export default function AboutSection() {
       <h1 className="font-instrument text-3xl md:text-4xl mb-8">About</h1>
       <div className="bg-white rounded-3xl p-6 border border-neutral-100 shadow-sm">
         <div className="text-neutral-700 leading-relaxed">
-          <p>{ABOUT_DATA.shortDescription}</p>
+          <p>{about.shortDescription}</p>
           
           {expanded && (
             <>
-              {ABOUT_DATA.longDescription.map((paragraph, index) => (
+              {about.longDescription.map((paragraph, index) => (
                 <p key={index} className="mt-4">
                   {paragraph}
                 </p>
@@ -41,4 +42,4 @@ export default function AboutSection() {
       </div>
     </div>
   )
-}
+} 

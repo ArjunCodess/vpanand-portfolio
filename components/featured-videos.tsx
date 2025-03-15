@@ -1,15 +1,28 @@
 import Image from "next/image";
 import { Play, Youtube } from "lucide-react";
 import Link from "next/link";
-import { FEATURED_VIDEOS } from "@/lib/data";
+import { getFeaturedVideos } from "@/lib/sanity";
 
-export default function FeaturedVideos() {
+// Define type for video data that matches Sanity schema
+export type VideoData = {
+  title: string;
+  description: string;
+  link: string;
+  image: string;
+  views: string;
+  platform: string;
+}
+
+// Server component that fetches data
+export default async function FeaturedVideos() {
+  const featuredVideos = await getFeaturedVideos();
+  
   return (
     <div id="featured-videos">
       <h1 className="font-instrument text-3xl md:text-4xl mb-8">Featured Videos</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {FEATURED_VIDEOS.map((video, index) => (
+        {featuredVideos.map((video: VideoData, index: number) => (
           <Link
             key={index}
             href={video.link}

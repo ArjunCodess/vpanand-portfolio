@@ -7,16 +7,17 @@ import {
   Sheet, 
   SheetContent, 
   SheetTrigger 
-} from "./ui/sheet";
-import { NAV_ITEMS } from "@/lib/data";
+} from "../ui/sheet";
+import { NavItem } from ".";
 
-export default function Navigation() {
+// Client component that handles interactions
+export default function NavigationClient({ navItems }: { navItems: NavItem[] }) {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   
   // Mobile navigation items (to be rendered inside Sheet)
   const NavItems = () => (
     <ul className="flex flex-col">
-      {NAV_ITEMS.map((item) => (
+      {navItems.map((item) => (
         <li key={item.name} className="w-full">
           <Link 
             href={`#${item.id}`}
@@ -58,4 +59,4 @@ export default function Navigation() {
       </Sheet>
     </div>
   );
-}
+} 

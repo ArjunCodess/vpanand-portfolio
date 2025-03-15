@@ -1,14 +1,27 @@
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
-import { PUBLICATIONS_DATA } from "@/lib/data"
+import { getPublications } from "@/lib/sanity"
 
-export default function PublicationsSection() {
+// Define type for publication data that matches Sanity schema
+export type PublicationData = {
+  title: string;
+  publisher?: string;
+  url: string;
+  date: string;
+  icon: string;
+  iconColor: string;
+}
+
+// Server component that fetches data
+export default async function PublicationsSection() {
+  const publicationsData = await getPublications();
+  
   return (
     <div id="publications">
       <h1 className="font-instrument text-3xl md:text-4xl mb-8">Publications</h1>
 
       <div className="space-y-6">
-        {PUBLICATIONS_DATA.map((publication, index) => (
+        {publicationsData.map((publication: PublicationData, index: number) => (
           <div 
             key={index}
             className="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-white rounded-xl sm:rounded-full p-4 border border-neutral-100 shadow-sm hover:shadow-md transition-all hover:border-neutral-200"
@@ -43,4 +56,4 @@ export default function PublicationsSection() {
       </div>
     </div>
   )
-}
+} 
