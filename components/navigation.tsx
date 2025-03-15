@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { MenuIcon } from "lucide-react";
+import { 
+  Sheet, 
+  SheetContent, 
+  SheetTrigger 
+} from "./ui/sheet";
 
 interface NavItem {
   name: string;
@@ -9,7 +15,7 @@ interface NavItem {
 }
 
 export default function Navigation() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
   
   const navItems: NavItem[] = [
     { name: "About", id: "about" },
@@ -21,36 +27,46 @@ export default function Navigation() {
     { name: "Courses", id: "courses" },
   ];
 
+  // Mobile navigation items (to be rendered inside Sheet)
+  const NavItems = () => (
+    <ul className="flex flex-col">
+      {navItems.map((item) => (
+        <li key={item.name} className="w-full">
+          <Link 
+            href={`#${item.id}`}
+            onClick={() => setIsSheetOpen(false)}
+            className="block py-3 px-4 group relative hover:bg-neutral-50 rounded-lg transition-all"
+          >
+            <div className="flex items-center">
+              <span className="text-lg">
+                {item.name}
+              </span>
+            </div>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+
+  // Only return the mobile navigation with Sheet
   return (
-    <nav className="mt-8 block sm:hidden border rounded-lg mb-16 px-4 py-3 shadow-sm">
-      <ul className="flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
-        {navItems.map((item, index) => (
-          <li key={item.name} className="w-auto">
-            <Link 
-              href={`#${item.id}`}
-              className="block py-2 px-3 group relative text-center hover:bg-neutral-50 rounded-lg transition-all hover:scale-105"
-            >
-              <div 
-                className="flex items-center justify-center"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <span className="text-md transition-colors duration-200 font-medium">
-                  {item.name}
-                </span>
-              </div>
-              {/* Mobile underline (centered) */}
-              <div className="relative h-px w-full mt-1">
-                <div 
-                  className={`absolute left-1/2 transform -translate-x-1/2 h-px bg-neutral-900 transition-all duration-300 ${
-                    hoveredIndex === index ? "w-full" : "w-0"
-                  }`}
-                />
-              </div>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div className="md:hidden fixed top-4 right-4 z-40">
+      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+        <SheetTrigger asChild>
+          <button 
+            aria-label="Open navigation menu" 
+            className="p-2 rounded-full bg-white shadow-md hover:bg-neutral-50 transition-colors"
+          >
+            <MenuIcon className="h-6 w-6" />
+          </button>
+        </SheetTrigger>
+        <SheetContent side="right" className="p-0">
+          <div className="px-4 py-6">
+            <h2 className="text-xl font-semibold mb-2">Navigation</h2>
+            <NavItems />
+          </div>
+        </SheetContent>
+      </Sheet>
+    </div>
   );
 }

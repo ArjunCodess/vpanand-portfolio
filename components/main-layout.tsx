@@ -1,16 +1,16 @@
-import Image from "next/image"
-import ProfileSection from "./profile-section"
-import HeadlineSection from "./headline-section"
-import AboutSection from "./about-section"
-import FeaturedVideos from "./featured-videos"
-import ExperienceSection from "./experience-section"
-import EducationSection from "./education-section"
-import SkillsSection from "./skills-section"
-import PublicationsSection from "./publications-section"
-import CoursesSection from "./courses-section"
-import Separator from "./separator"
-import Navigation from "./navigation"
-import { ScrollProgress } from "./ui/scroll-progress"
+import Image from "next/image";
+import ProfileSection from "./profile-section";
+import HeadlineSection from "./headline-section";
+import AboutSection from "./about-section";
+import FeaturedVideos from "./featured-videos";
+import ExperienceSection from "./experience-section";
+import EducationSection from "./education-section";
+import SkillsSection from "./skills-section";
+import PublicationsSection from "./publications-section";
+import CoursesSection from "./courses-section";
+import Separator from "./separator";
+import Navigation from "./navigation";
+import { ScrollProgress } from "./ui/scroll-progress";
 
 export default function MainLayout() {
   return (
@@ -19,9 +19,6 @@ export default function MainLayout() {
       <div className="md:hidden">
         <div className="mb-12">
           <ProfileSection />
-        </div>
-        <div className="mb-8">
-          <Navigation />
         </div>
         <div className="space-y-16">
           <HeadlineSection />
@@ -40,6 +37,7 @@ export default function MainLayout() {
           <Separator />
           <CoursesSection />
         </div>
+        <Navigation />
       </div>
 
       {/* Desktop Layout - Two columns */}
@@ -61,15 +59,17 @@ export default function MainLayout() {
           <div className="col-span-2 pr-6">
             <div className="md:sticky md:top-24 overflow-hidden">
               <ProfileSection />
-              <Navigation />
             </div>
           </div>
-          
+
           {/* Vertical Scroll Progress - Only visible on md screens and up */}
-          <div className="hidden md:block absolute left-[37.5%] top-0 bottom-0 bg-neutral-200" style={{ width: '1px' }}>
-            <ScrollProgress 
-              orientation="vertical" 
-              className="h-full bg-neutral-400 rounded-full" 
+          <div
+            className="hidden md:block absolute left-[37.5%] top-0 bottom-0 bg-neutral-200"
+            style={{ width: "1px" }}
+          >
+            <ScrollProgress
+              orientation="vertical"
+              className="h-full bg-neutral-400 rounded-full"
             />
           </div>
 
@@ -95,5 +95,5 @@ export default function MainLayout() {
         </div>
       </div>
     </div>
-  )
-} 
+  );
+}
