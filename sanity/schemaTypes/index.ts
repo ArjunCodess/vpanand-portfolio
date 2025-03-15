@@ -213,7 +213,20 @@ const course = {
       name: 'color',
       title: 'Color',
       type: 'string',
-      initialValue: COURSES_DATA[0].color,
+      options: {
+        list: [
+          {title: 'Red', value: 'red'},
+          {title: 'Orange', value: 'orange'},
+          {title: 'Yellow', value: 'yellow'},
+          {title: 'Green', value: 'green'},
+          {title: 'Teal', value: 'teal'},
+          {title: 'Blue', value: 'blue'},
+          {title: 'Indigo', value: 'indigo'},
+          {title: 'Purple', value: 'purple'},
+          {title: 'Pink', value: 'pink'},
+          {title: 'Cyan', value: 'cyan'},
+        ]
+      },
     },
   ],
 }
@@ -306,7 +319,22 @@ const publication = {
       name: 'iconColor',
       title: 'Icon Color',
       type: 'string',
-      initialValue: PUBLICATIONS_DATA[0].iconColor,
+      description: 'Use simplified color name without shade (e.g., "red" instead of "red-500")',
+      initialValue: 'red',
+      options: {
+        list: [
+          {title: 'Red', value: 'red'},
+          {title: 'Orange', value: 'orange'},
+          {title: 'Yellow', value: 'yellow'},
+          {title: 'Green', value: 'green'},
+          {title: 'Teal', value: 'teal'},
+          {title: 'Blue', value: 'blue'},
+          {title: 'Indigo', value: 'indigo'},
+          {title: 'Purple', value: 'purple'},
+          {title: 'Pink', value: 'pink'},
+          {title: 'Cyan', value: 'cyan'},
+        ]
+      },
     },
   ],
 }
@@ -346,7 +374,22 @@ const education = {
       name: 'color',
       title: 'Color',
       type: 'string',
-      initialValue: EDUCATION_DATA[0].color,
+      description: 'Use simplified color name without shade (e.g., "purple" instead of "purple-500")',
+      initialValue: 'purple',
+      options: {
+        list: [
+          {title: 'Red', value: 'red'},
+          {title: 'Orange', value: 'orange'},
+          {title: 'Yellow', value: 'yellow'},
+          {title: 'Green', value: 'green'},
+          {title: 'Teal', value: 'teal'},
+          {title: 'Blue', value: 'blue'},
+          {title: 'Indigo', value: 'indigo'},
+          {title: 'Purple', value: 'purple'},
+          {title: 'Pink', value: 'pink'},
+          {title: 'Cyan', value: 'cyan'},
+        ]
+      },
     },
   ],
 }
@@ -403,7 +446,22 @@ const experience = {
       name: 'color',
       title: 'Color',
       type: 'string',
-      initialValue: EXPERIENCE_DATA[0].color,
+      description: 'Use simplified color name without shade (e.g., "red" instead of "red-500")',
+      initialValue: 'red',
+      options: {
+        list: [
+          {title: 'Red', value: 'red'},
+          {title: 'Orange', value: 'orange'},
+          {title: 'Yellow', value: 'yellow'},
+          {title: 'Green', value: 'green'},
+          {title: 'Teal', value: 'teal'},
+          {title: 'Blue', value: 'blue'},
+          {title: 'Indigo', value: 'indigo'},
+          {title: 'Purple', value: 'purple'},
+          {title: 'Pink', value: 'pink'},
+          {title: 'Cyan', value: 'cyan'},
+        ]
+      },
     },
   ],
 }
