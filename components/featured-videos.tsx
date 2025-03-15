@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function FeaturedVideos() {
   return (
-    <div id="videos">
+    <div id="featured-videos">
       <h1 className="text-2xl font-serif mb-8">Featured Videos</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

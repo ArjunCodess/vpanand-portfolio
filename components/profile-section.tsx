@@ -48,7 +48,6 @@ export default function ProfileSection() {
         transition={{ duration: 0.25, delay: 0.4, ease: "easeOut" }}
       >
         <h1 className="text-3xl font-medium">
-          <span className="inline-block text-xl mr-2">I&apos;m</span>
           <ScrambleIn
             ref={nameRef}
             text="Dr. Vijay Prakash Anand"
