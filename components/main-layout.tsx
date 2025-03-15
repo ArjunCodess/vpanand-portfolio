@@ -8,7 +8,7 @@ import EducationSection from "./education-section";
 import SkillsSection from "./skills-section";
 import PublicationsSection from "./publications-section";
 import CoursesSection from "./courses-section";
-import Separator from "./separator";
+import Separator from "./ui/separator";
 import Navigation from "./navigation";
 import { ScrollProgress } from "./ui/scroll-progress";
 
@@ -43,7 +43,7 @@ export default function MainLayout() {
       {/* Desktop Layout - Two columns */}
       <div className="hidden md:block">
         {/* Hero Image - Only visible on desktop/laptop */}
-        <div className="w-full mb-12 rounded-2xl overflow-hidden">
+        <div className="w-full mb-12 rounded-2xl overflow-hidden border border-neutral-300">
           <Image
             src="/hero.jpeg"
             alt="Dr. Vijay Prakash Anand - Hero Image"

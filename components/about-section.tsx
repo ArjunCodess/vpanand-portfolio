@@ -9,7 +9,7 @@ export default function AboutSection() {
   
   return (
     <div id="about">
-      <h1 className="text-2xl font-serif mb-8">About</h1>
+      <h1 className="font-instrument text-3xl md:text-4xl mb-8">About</h1>
       <div className="bg-white rounded-3xl p-6 border border-neutral-100 shadow-sm">
         <div className="text-neutral-700 leading-relaxed">
           <p>{shortDescription}</p>

@@ -7,7 +7,7 @@ export default function ExperienceSection() {
 
   return (
     <div id="experience">
-      <h1 className="text-2xl font-serif mb-8">Experience</h1>
+      <h1 className="font-instrument text-3xl md:text-4xl mb-8">Experience</h1>
 
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-white rounded-xl sm:rounded-full p-4 border border-neutral-100 shadow-sm">

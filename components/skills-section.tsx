@@ -1,7 +1,7 @@
 export default function SkillsSection() {
   return (
     <div id="skills">
-      <h1 className="text-2xl font-serif mb-8">Skills</h1>
+      <h1 className="font-instrument text-3xl md:text-4xl mb-8">Skills</h1>
 
       <div className="bg-white rounded-3xl p-6 border border-neutral-100 shadow-sm space-y-6">
         {/* Industry Knowledge Section */}

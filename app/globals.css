@@ -127,3 +127,7 @@ body {
   scroll-behavior: smooth;
   font-family: var(--font-geist-sans);
 }
+
+.font-instrument {
+  font-family: var(--font-instrument-serif);
+}

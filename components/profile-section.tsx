@@ -32,7 +32,7 @@ export default function ProfileSection() {
             speed={0.4}
             rotationRange={[3, 3, 2]}
           >
-            <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl overflow-hidden shadow-lg hover:scale-105 duration-200 transition-transform">
+            <div className="border border-neutral-300 w-32 h-32 sm:w-40 sm:h-40 rounded-3xl overflow-hidden shadow-lg hover:scale-105 duration-200 transition-transform">
               <Image
                 src="/image.png"
                 alt="Dr. Vijay Prakash Anand"
@@ -50,7 +50,7 @@ export default function ProfileSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25, delay: 0.4, ease: "easeOut" }}
       >
-        <h1 className="text-3xl font-medium">
+        <h1 className="font-instrument text-3xl sm:text-4xl font-medium">
           <ScrambleIn
             ref={nameRef}
             text="Dr. Vijay Prakash Anand"
@@ -63,7 +63,7 @@ export default function ProfileSection() {
         </h1>
         <p className="text-neutral-700 text-base sm:text-lg">
           Marketing Professor & Digital
-          <br className="hidden sm:block" />
+          <br className="hidden sm:block" />{" "}
           Marketing Expert with 5M+ YouTube Views
         </p>
       </motion.div>

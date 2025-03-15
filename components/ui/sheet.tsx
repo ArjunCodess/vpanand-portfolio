@@ -6,6 +6,17 @@ import { XIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+// Visually Hidden component for accessible elements that shouldn't be visible
+const VisuallyHidden = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <span 
+      className="absolute w-[1px] h-[1px] p-0 -m-[1px] overflow-hidden clip-rect-0 whitespace-nowrap border-0"
+    >
+      {children}
+    </span>
+  )
+}
+
 function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />
 }
@@ -48,9 +59,13 @@ function SheetContent({
   className,
   children,
   side = "right",
+  title,
+  hideTitle = false,
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
   side?: "top" | "right" | "bottom" | "left"
+  title?: string
+  hideTitle?: boolean
 }) {
   return (
     <SheetPortal>
@@ -71,6 +86,20 @@ function SheetContent({
         )}
         {...props}
       >
+        {/* Ensure we always have a title for screen readers */}
+        {title && hideTitle ? (
+          <VisuallyHidden>
+            <SheetPrimitive.Title>{title}</SheetPrimitive.Title>
+          </VisuallyHidden>
+        ) : title ? (
+          <SheetPrimitive.Title className="px-4 pt-4 text-foreground font-semibold">
+            {title}
+          </SheetPrimitive.Title>
+        ) : (
+          <VisuallyHidden>
+            <SheetPrimitive.Title>Sheet Content</SheetPrimitive.Title>
+          </VisuallyHidden>
+        )}
         {children}
         <SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
           <XIcon className="size-4" />
@@ -136,4 +165,5 @@ export {
   SheetFooter,
   SheetTitle,
   SheetDescription,
+  VisuallyHidden,
 }

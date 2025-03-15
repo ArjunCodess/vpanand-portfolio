@@ -35,7 +35,7 @@ export default function Navigation() {
           <Link 
             href={`#${item.id}`}
             onClick={() => setIsSheetOpen(false)}
-            className="block py-3 px-4 group relative hover:bg-neutral-50 rounded-lg transition-all"
+            className="block py-2 px-4 group relative hover:bg-neutral-50 rounded-lg transition-all"
           >
             <div className="flex items-center">
               <span className="text-lg">
@@ -60,9 +60,12 @@ export default function Navigation() {
             <MenuIcon className="h-6 w-6" />
           </button>
         </SheetTrigger>
-        <SheetContent side="right" className="p-0">
-          <div className="px-4 py-6">
-            <h2 className="text-xl font-semibold mb-2">Navigation</h2>
+        <SheetContent 
+          side="right" 
+          className="p-0"
+          title=""
+        >
+          <div className="px-4 py-10">
             <NavItems />
           </div>
         </SheetContent>
