@@ -29,7 +29,12 @@ export async function getProfile() {
       title,
       fullTitle,
       email,
-      "imageUrl": image.asset->url
+      "imageUrl": image.asset->url,
+      socialLinks[] {
+        platform,
+        url,
+        icon
+      }
     }`
   );
   

@@ -78,6 +78,59 @@ const profile = {
         hotspot: true,
       },
     },
+    {
+      name: 'socialLinks',
+      title: 'Social Links',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'platform',
+              title: 'Platform',
+              type: 'string',
+              validation: (Rule: RuleType) => Rule.required(),
+              options: {
+                list: [
+                  {title: 'LinkedIn', value: 'LinkedIn'},
+                  {title: 'Twitter', value: 'Twitter'},
+                  {title: 'YouTube', value: 'YouTube'},
+                  {title: 'Facebook', value: 'Facebook'},
+                  {title: 'Instagram', value: 'Instagram'},
+                  {title: 'Website', value: 'Website'}
+                ]
+              },
+            },
+            {
+              name: 'url',
+              title: 'URL',
+              type: 'url',
+              validation: (Rule: RuleType) => Rule.required(),
+            },
+            {
+              name: 'icon',
+              title: 'Icon',
+              type: 'string',
+              description: 'Available icons: /icons/linkedin.svg, /icons/twitter.svg, /icons/youtube.svg, /icons/facebook.svg, /icons/instagram.svg, /icons/link.svg',
+              initialValue: '/icons/link.svg',
+            },
+          ],
+          preview: {
+            select: {
+              title: 'platform',
+              subtitle: 'url'
+            },
+            prepare({title, subtitle}: {title?: string, subtitle?: string}) {
+              return {
+                title: title,
+                subtitle
+              }
+            }
+          }
+        },
+      ],
+    },
   ],
 }
 

@@ -16,6 +16,23 @@ export const PROFILE_DATA = {
   fullTitle: "Marketing Professor & Digital Marketing Expert\nwith 5M+ YouTube Views",
   email: "vpanand73@gmail.com",
   image: "/image.png",
+  socialLinks: [
+    {
+      platform: "LinkedIn",
+      url: "https://linkedin.com/in/vpanand",
+      icon: "/icons/linkedin.svg"
+    },
+    {
+      platform: "Twitter",
+      url: "https://twitter.com/vpanand",
+      icon: "/icons/twitter.svg"
+    },
+    {
+      platform: "YouTube",
+      url: "https://youtube.com/c/vijayprakashanand",
+      icon: "/icons/youtube.svg"
+    }
+  ]
 };
 
 // Hero image

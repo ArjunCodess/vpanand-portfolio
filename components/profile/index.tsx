@@ -8,6 +8,11 @@ export type ProfileData = {
   fullTitle: string;
   email: string;
   image: string;
+  socialLinks: {
+    platform: string;
+    url: string;
+    icon: string;
+  }[];
 }
 
 // Server component that fetches data and passes it to the client component
