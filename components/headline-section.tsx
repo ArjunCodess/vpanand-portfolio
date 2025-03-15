@@ -52,13 +52,13 @@ export default function HeadlineSection() {
       >
         <Link 
           href="mailto:vpanand73@gmail.com"
-          className="bg-black text-white px-6 py-3 rounded-full text-sm flex items-center justify-center gap-2"
+          className="group w-full md:w-auto bg-black text-white px-6 py-3 rounded-full text-sm flex items-center justify-center gap-2 hover:bg-neutral-800 hover:shadow-lg transition-all duration-300 hover:scale-105"
         >
-          Talk with me <ArrowRight className="w-4 h-4" />
+          Talk with me <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
         </Link>
         <Link 
           href="#publications" 
-          className="text-sm border border-neutral-200 px-5 py-3 rounded-full text-center"
+          className="w-full md:w-auto text-sm border border-neutral-200 px-5 py-3 rounded-full text-center hover:border-neutral-400 hover:bg-neutral-50 hover:shadow-md transition-all duration-300 hover:scale-105"
         >
           See my work
         </Link>

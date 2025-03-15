@@ -24,22 +24,25 @@ export default function ProfileSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25, delay: 0.2, ease: "easeOut" }}
+        className="p-4"
       >
-        <Float 
-          amplitude={[5, 10, 15]} 
-          speed={0.4}
-          rotationRange={[5, 5, 3]}
-        >
-          <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl overflow-hidden shadow-lg hover:scale-105 duration-200 transition-transform">
-            <Image
-              src="/image.png"
-              alt="Dr. Vijay Prakash Anand"
-              width={160}
-              height={160}
-              className="object-cover"
-            />
-          </div>
-        </Float>
+        <div className="relative">
+          <Float 
+            amplitude={[3, 6, 9]}
+            speed={0.4}
+            rotationRange={[3, 3, 2]}
+          >
+            <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl overflow-hidden shadow-lg hover:scale-105 duration-200 transition-transform">
+              <Image
+                src="/image.png"
+                alt="Dr. Vijay Prakash Anand"
+                width={160}
+                height={160}
+                className="object-cover"
+              />
+            </div>
+          </Float>
+        </div>
       </motion.div>
       <motion.div 
         className="space-y-2 text-center sm:text-left"

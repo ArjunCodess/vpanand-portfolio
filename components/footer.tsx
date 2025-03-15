@@ -6,47 +6,48 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white py-6 sm:py-8 rounded-t-xl sm:rounded-t-3xl">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
-        <div className="w-full flex justify-center py-3 mb-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:flex items-center justify-center gap-x-8 gap-y-4 md:space-x-6 lg:space-x-8">
+        {/* Navigation links - only visible on mobile */}
+        <div className="w-full flex justify-center py-3 mb-8 sm:hidden">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-4">
             <Link
               href="#about"
-              className="text-neutral-400 hover:text-white transition-colors text-center"
+              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
             >
               About
             </Link>
             <Link
               href="#featured-videos"
-              className="text-neutral-400 hover:text-white transition-colors text-center"
+              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
             >
               Featured Videos
             </Link>
             <Link
               href="#experience"
-              className="text-neutral-400 hover:text-white transition-colors text-center"
+              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
             >
               Experience
             </Link>
             <Link
               href="#education"
-              className="text-neutral-400 hover:text-white transition-colors text-center"
+              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
             >
               Education
             </Link>
             <Link
               href="#skills"
-              className="text-neutral-400 hover:text-white transition-colors text-center"
+              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
             >
               Skills
             </Link>
             <Link
               href="#publications"
-              className="text-neutral-400 hover:text-white transition-colors text-center"
+              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
             >
               Publications
             </Link>
             <Link
               href="#courses"
-              className="text-neutral-400 hover:text-white transition-colors text-center"
+              className="text-neutral-400 hover:text-white transition-colors hover:scale-105 transform"
             >
               Courses
             </Link>
@@ -75,9 +76,9 @@ export default function Footer() {
           <div>
             <Link 
               href="mailto:vpanand73@gmail.com"
-              className="bg-white text-black px-4 py-2 rounded-full text-sm flex items-center justify-center gap-2"
+              className="group bg-white text-black px-4 py-2 rounded-full text-sm flex items-center justify-center gap-2 hover:bg-neutral-100 hover:scale-105 transition-all hover:shadow-md duration-300"
             >
-              Contact me <ArrowRight className="w-3 h-3" />
+              Contact me <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
         </div>
