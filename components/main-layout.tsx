@@ -12,6 +12,7 @@ import Separator from "./ui/separator";
 import Navigation from "./navigation";
 import { ScrollProgress } from "./ui/scroll-progress";
 import { getHeroImage } from "@/lib/sanity";
+import { BlurFade } from "./ui/blur-fade";
 
 // Server component that fetches data and renders the layout
 export default async function MainLayout() {
@@ -21,25 +22,43 @@ export default async function MainLayout() {
     <div className="relative">
       {/* Mobile and Tablet Layout - Stack everything vertically */}
       <div className="md:hidden">
-        <div className="mb-12">
-          <ProfileSection />
-        </div>
+        <BlurFade delay={0.1} inView>
+          <div className="mb-12">
+            <ProfileSection />
+          </div>
+        </BlurFade>
         <div className="space-y-16">
-          <HeadlineSection />
+          <BlurFade delay={0.2} inView>
+            <HeadlineSection />
+          </BlurFade>
           <Separator />
-          <AboutSection />
+          <BlurFade delay={0.3} inView>
+            <AboutSection />
+          </BlurFade>
           <Separator />
-          <FeaturedVideos />
+          <BlurFade delay={0.4} inView>
+            <FeaturedVideos />
+          </BlurFade>
           <Separator />
-          <ExperienceSection />
+          <BlurFade delay={0.5} inView>
+            <ExperienceSection />
+          </BlurFade>
           <Separator />
-          <EducationSection />
+          <BlurFade delay={0.6} inView>
+            <EducationSection />
+          </BlurFade>
           <Separator />
-          <SkillsSection />
+          <BlurFade delay={0.7} inView>
+            <SkillsSection />
+          </BlurFade>
           <Separator />
-          <PublicationsSection />
+          <BlurFade delay={0.8} inView>
+            <PublicationsSection />
+          </BlurFade>
           <Separator />
-          <CoursesSection />
+          <BlurFade delay={0.9} inView>
+            <CoursesSection />
+          </BlurFade>
         </div>
         <Navigation />
       </div>
@@ -47,22 +66,26 @@ export default async function MainLayout() {
       {/* Desktop Layout - Two columns */}
       <div className="hidden md:block">
         {/* Hero Image - Only visible on desktop/laptop */}
-        <div className="w-full mb-12 rounded-2xl overflow-hidden border border-neutral-300">
-          <Image
-            src={heroImage.src}
-            alt={heroImage.alt}
-            width={heroImage.width}
-            height={heroImage.height}
-            className="w-full h-auto object-cover"
-            priority
-          />
-        </div>
+        <BlurFade delay={0.1} inView>
+          <div className="w-full mb-12 rounded-2xl overflow-hidden border border-neutral-300">
+            <Image
+              src={heroImage.src}
+              alt={heroImage.alt}
+              width={heroImage.width}
+              height={heroImage.height}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </div>
+        </BlurFade>
 
         <div className="grid grid-cols-5 gap-16 relative">
           {/* Left Column - Profile Section and Navigation */}
           <div className="col-span-2 pr-6">
             <div className="md:sticky md:top-24 overflow-hidden">
-              <ProfileSection />
+              <BlurFade delay={0.2} inView>
+                <ProfileSection />
+              </BlurFade>
             </div>
           </div>
 
@@ -80,21 +103,37 @@ export default async function MainLayout() {
           {/* Right Column - All Other Content */}
           <div className="col-span-3 space-y-16">
             {/* Headline Section */}
-            <HeadlineSection />
+            <BlurFade delay={0.3} inView>
+              <HeadlineSection />
+            </BlurFade>
             <Separator />
-            <AboutSection />
+            <BlurFade delay={0.4} inView>
+              <AboutSection />
+            </BlurFade>
             <Separator />
-            <FeaturedVideos />
+            <BlurFade delay={0.5} inView>
+              <FeaturedVideos />
+            </BlurFade>
             <Separator />
-            <ExperienceSection />
+            <BlurFade delay={0.6} inView>
+              <ExperienceSection />
+            </BlurFade>
             <Separator />
-            <EducationSection />
+            <BlurFade delay={0.7} inView>
+              <EducationSection />
+            </BlurFade>
             <Separator />
-            <SkillsSection />
+            <BlurFade delay={0.8} inView>
+              <SkillsSection />
+            </BlurFade>
             <Separator />
-            <PublicationsSection />
+            <BlurFade delay={0.9} inView>
+              <PublicationsSection />
+            </BlurFade>
             <Separator />
-            <CoursesSection />
+            <BlurFade delay={1.0} inView>
+              <CoursesSection />
+            </BlurFade>
           </div>
         </div>
       </div>
